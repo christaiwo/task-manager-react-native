@@ -1,7 +1,8 @@
-import { SplashScreen } from "expo-router";
+import { SplashScreen, Stack } from "expo-router";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native";
+import Welcome from "../components/Welcome";
 
 export default function Page() {
   const [isReady, setIsReady] = useState(false);
@@ -13,19 +14,18 @@ export default function Page() {
   }, []);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView className="bg-blend-normal">
       {isReady ? (
-        <View className="grid grid-cols-2">
-          <View className="bg-green-400 h-full w-full">
-            <Text>Test here</Text>
-          </View>
-        </View>
+        <>
+          <Stack.Screen options={{  
+            headerShown:false
+          }}/>
+          <Welcome />
+        </>
       ): (
         <SplashScreen />
       )
       }
-
-
     </SafeAreaView>
   );
 }
