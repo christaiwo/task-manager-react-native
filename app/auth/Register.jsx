@@ -1,13 +1,22 @@
 import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
+// import { FIREBASE_AUTH } from '../../firebaseConfig';
+import {createUserWithEmailAndPassword, getAuth} from 'firebase/auth';
 
 const Register = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
 
+    const auth = getAuth();
+
     const handleSubmit = () =>{
-        alert(email)
+        auth.createUserWithEmailAndPassword(auth, email, password).then(userCredential => {
+
+        }).catch(error => {
+            // alert('he')
+        })
+        // alert(email)
     }
   return (
     <View className="px-2 flex flex-col">

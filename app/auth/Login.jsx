@@ -1,13 +1,71 @@
 import { View, Text, TextInput, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { FIREBASE_AUTH } from '../../firebaseConfig';
+import {signInWithEmailAndPassword } from "firebase/auth";
+import Toast from 'react-native-root-toast';
+import { useRouter } from 'expo-router';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const router = useRouter();
+    const auth = FIREBASE_AUTH;
 
     const handleSubmit = () =>{
-        alert(email)
+        if(!email || !password){
+            return Toast.show('All field is required', {
+                position:Toast.positions.CENTER,
+                animation:true,
+                duration: Toast.durations.LONG,
+            });
+        }
+        else if(password.length < 6){
+            return Toast.show('Password is too short', {
+                position:Toast.positions.CENTER,
+                animation:true,
+                duration: Toast.durations.LONG,
+            });
+        }
+
+        // authenticate
+        signInWithEmailAndPassword(auth, email, password).then(userCredential => {
+            Toast.show('Login success', {
+                position:Toast.positions.CENTER,
+                animation:true,
+                duration: Toast.durations.LONG,
+            });
+
+            router.push('/dashboard');
+        }).catch(error => {
+            let errorMessage = '';
+
+            // Customize error messages for specific Firebase errors
+            switch (error.code) {
+                case 'auth/invalid-email':
+                    errorMessage = 'Invalid email address';
+                    break;
+                case 'auth/user-disabled':
+                    errorMessage = 'Your account has been disabled';
+                    break;
+                case 'auth/user-not-found':
+                    errorMessage = 'Invalid credentials';
+                    break;
+                case 'auth/wrong-password':
+                    errorMessage = 'Incorrect password';
+                    break;
+                default:
+                    errorMessage = 'An error occurred. Please try again later.';
+                    break;
+            }
+
+            Toast.show(errorMessage, {
+                position:Toast.positions.CENTER,
+                animation:true,
+                duration: Toast.durations.LONG,
+            });
+        })
     }
+
   return (
     <View className="px-2 flex flex-col">
         <View className="flex flex-col">
