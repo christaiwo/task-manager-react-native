@@ -16,8 +16,18 @@ const index = () => {
 
       <SafeAreaView >
         <ScrollView>
+
           <View className={`${Platform.OS == 'android' && 'mt-10'} "flex flex-col items-center px-2"`}>
-              <View className="mt-10 mb-5">
+
+            <View className="flex flex-row gap-3 mt-10 w-full px-3 items-center justify-center">
+              <TouchableOpacity className={`${currentRoute === 'login' ?  'bg-blue-500 border-2 border-blue-500 ' : "border-2 border-blue-500 "} py-3 px-3 w-1/2 rounded-lg`} onPress={() => setCurrentRoute('login')}>
+                  <Text className={`mx-auto font-bold text-xl ${currentRoute === 'login' ? 'text-white' : 'text-black'}`}>LOG IN</Text>
+              </TouchableOpacity>
+              <TouchableOpacity className={`${currentRoute === 'register' ?  'bg-blue-500 border-2 border-blue-500 ' : "border-2 border-blue-500 "} py-3 px-3 w-1/2 rounded-lg`} onPress={() => setCurrentRoute('register')}>
+                  <Text className={`mx-auto font-bold text-xl ${currentRoute === 'register' ? 'text-white' : 'text-black'}`}>REGISTER</Text>
+              </TouchableOpacity>
+            </View>
+            <View className="mt-10 mb-5">
               <Text className="font-bold text-3xl text-center">{currentRoute == 'login' ? 'Welcome Back' : 'Register an account'}</Text>
               <Text className="text-sm text-light text-center">{currentRoute == 'login' ? 'Login To your account': 'Register an account'}</Text>
             </View>
@@ -32,17 +42,6 @@ const index = () => {
               <View className="h-[2px]  w-16 bg-neutral-400"></View>
             </View>
             
-            <View className="flex flex-row gap-3 mt-10 w-full px-3 items-center justify-center">
-              <TouchableOpacity className={`${currentRoute === 'login' ?  'bg-blue-500 border-2 border-blue-500 ' : "border-2 border-blue-500 "} py-3 px-3 w-1/2 rounded-lg`} onPress={() => setCurrentRoute('login')}>
-                  <Text className={`mx-auto font-bold text-xl ${currentRoute === 'login' ? 'text-white' : 'text-black'}`}>LOG IN</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity className={`${currentRoute === 'register' ?  'bg-blue-500 border-2 border-blue-500 ' : "border-2 border-blue-500 "} py-3 px-3 w-1/2 rounded-lg`} onPress={() => setCurrentRoute('register')}>
-                  <Text className={`mx-auto font-bold text-xl ${currentRoute === 'register' ? 'text-white' : 'text-black'}`}>REGISTER</Text>
-              </TouchableOpacity>
-            </View>
-
-
             <View className="mt-10 w-full">
               {currentRoute === 'login' ? (<Login/>) : (<Register/>)}
             </View>
