@@ -5,6 +5,11 @@
       "bundler": "metro"
     },
     "name": "task-manager",
-    "slug": "task-manager"
+    "slug": "task-manager",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    }
   }
 }
