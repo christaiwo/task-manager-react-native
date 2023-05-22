@@ -6,7 +6,7 @@ import { StatusBar } from 'expo-status-bar'
 const _layout = () => {
   return (
     <>
-        <StatusBar style='auot'/>
+        <StatusBar style='dark'/>
         <Stack/>
     </>
   )
