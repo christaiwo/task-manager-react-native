@@ -6,9 +6,9 @@ import { AntDesign } from '@expo/vector-icons';
 import Welcome from '../../../components/dashboard/Welcome';
 import Upcoming from '../../../components/dashboard/Upcoming';
 
-const index = () => {
+const Dashboard = () => {
   return (
-    <ScrollView>
+    <ScrollView className="bg-[#E5E5E5] h-full w-full">
       <Stack.Screen options={{  
           headerStyle: { backgroundColor: '#E5E5E5'},
           headerLeft: () => (<HeaderLeft/>),
@@ -16,7 +16,7 @@ const index = () => {
           headerTitle: '',
       }} />
 
-      <SafeAreaView className="bg-[#E5E5E5] h-full w-full">
+      <SafeAreaView className="">
         <Welcome/>
 
         <Upcoming/>
@@ -25,4 +25,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Dashboard
