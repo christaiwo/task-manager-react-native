@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, TextInput } from 'react-native'
+import { View, Text, SafeAreaView, TextInput, ScrollView } from 'react-native'
 import React from 'react'
 import { Stack } from 'expo-router'
 import { HeaderLeft, HeaderRight } from './Header';
@@ -8,7 +8,7 @@ import Upcoming from '../../../components/dashboard/Upcoming';
 
 const index = () => {
   return (
-    <>
+    <ScrollView>
       <Stack.Screen options={{  
           headerStyle: { backgroundColor: '#E5E5E5'},
           headerLeft: () => (<HeaderLeft/>),
@@ -21,7 +21,7 @@ const index = () => {
 
         <Upcoming/>
       </SafeAreaView>
-    </>
+    </ScrollView>
   )
 }
 
