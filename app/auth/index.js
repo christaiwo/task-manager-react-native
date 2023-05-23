@@ -4,9 +4,9 @@ import { Stack, useFocusEffect, useRouter } from 'expo-router'
 import Login from './Login';
 import Register from './Register';
 import { KeyboardAvoidingView } from 'react-native';
-import Toast from 'react-native-toast-message';
+import Toast from 'react-native-root-toast';
 import { RootSiblingParent } from 'react-native-root-siblings';
-import {onAuthStateChanged } from "firebase/auth";
+import {onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { FIREBASE_AUTH } from '../../firebaseConfig';
 
 
@@ -34,6 +34,35 @@ const index = () => {
 
 
 
+  // Function to handle sign-in with Google
+  const signInWithGoogle = () => {
+    // const provider = new GoogleAuthProvider();
+
+    // signInWithPopup()
+    //   .then((userCredential) => {
+    //     // The signed-in user info
+    //     // const user = userCredential.user;
+
+    //     Toast.show('Login success', {
+    //       position: Toast.positions.CENTER,
+    //       animation: true,
+    //       duration: Toast.durations.LONG,
+    //     });
+
+    //     router.push('/dashboard');
+    //   })
+    //   .catch((error) => {
+    //     Toast.show(error.message, {
+    //       position: Toast.positions.CENTER,
+    //       animation: true,
+    //       duration: Toast.durations.LONG,
+    //     });
+    //   });
+
+    alert('Something went wrong');
+  };
+
+
   return (
     <KeyboardAvoidingView  behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={{ flex:1 }}>
       <Stack.Screen options={{  
@@ -59,7 +88,7 @@ const index = () => {
                 <Text className="text-sm text-light text-center">{currentRoute == 'login' ? 'Login To your account': 'Register an account'}</Text>
               </View>
 
-              <TouchableOpacity>
+              <TouchableOpacity onPress={signInWithGoogle}>
                 <Image source={require('../../assets/images/icons/google.png')} />
               </TouchableOpacity>
               
