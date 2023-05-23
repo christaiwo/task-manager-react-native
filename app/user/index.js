@@ -4,6 +4,7 @@ import { Stack } from 'expo-router'
 import { HeaderLeft, HeaderRight } from './Header';
 import { AntDesign } from '@expo/vector-icons';
 import Welcome from './Welcome';
+import Upcoming from './Upcoming';
 
 
 const index = () => {
@@ -19,7 +20,7 @@ const index = () => {
       <SafeAreaView className="bg-[#E5E5E5] h-full w-full">
         <Welcome/>
 
-        
+        <Upcoming/>
       </SafeAreaView>
     </>
   )
