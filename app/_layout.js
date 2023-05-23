@@ -7,7 +7,9 @@ const _layout = () => {
   return (
     <>
         <StatusBar style='dark'/>
-        <Stack/>
+        <Stack screenOptions={{  
+          headerShown: false
+        }}/>
     </>
   )
 }

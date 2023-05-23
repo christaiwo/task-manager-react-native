@@ -6,8 +6,8 @@ import Toast from 'react-native-root-toast';
 import { useRouter } from 'expo-router';
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('christaiwochris@gmail.com');
+    const [password, setPassword] = useState('123456');
     const router = useRouter();
     const auth = FIREBASE_AUTH;
 
@@ -35,7 +35,7 @@ const Login = () => {
                 duration: Toast.durations.LONG,
             });
 
-            router.push('/dashboard');
+            router.push('/user');
         }).catch(error => {
             let errorMessage = '';
 

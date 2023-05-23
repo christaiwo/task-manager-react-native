@@ -35,7 +35,7 @@ const Register = () => {
                 duration: Toast.durations.LONG,
             });
 
-            router.push('/dashboard');
+            router.push('/user');
         }).catch(error => {
             let errorMessage = '';
 

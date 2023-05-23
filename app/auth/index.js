@@ -18,7 +18,7 @@ const index = () => {
   const checkAuthState = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        router.push('/dashboard');
+        router.push('/user');
       }
     });
   };
