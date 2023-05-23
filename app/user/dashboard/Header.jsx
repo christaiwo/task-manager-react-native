@@ -14,7 +14,7 @@ export const HeaderLeft = () => {
 export const HeaderRight = () => {
     return (  
         <TouchableOpacity className="mx-2">
-            <Image source={require('../../assets/images/icons/avatar.png')} className="w-10 h-10 rounded-full" />
+            <Image source={require('../../../assets/images/icons/avatar.png')} className="w-10 h-10 rounded-full" />
         </TouchableOpacity>
     );
 }

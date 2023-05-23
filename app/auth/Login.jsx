@@ -35,7 +35,7 @@ const Login = () => {
                 duration: Toast.durations.LONG,
             });
 
-            router.push('/user');
+            router.push('/user/dashboard');
         }).catch(error => {
             let errorMessage = '';
 

@@ -3,9 +3,8 @@ import React from 'react'
 import { Stack } from 'expo-router'
 import { HeaderLeft, HeaderRight } from './Header';
 import { AntDesign } from '@expo/vector-icons';
-import Welcome from './Welcome';
-import Upcoming from './Upcoming';
-
+import Welcome from '../../../components/dashboard/Welcome';
+import Upcoming from '../../../components/dashboard/Upcoming';
 
 const index = () => {
   return (

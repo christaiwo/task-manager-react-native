@@ -13,7 +13,7 @@ const _layout = () => {
         tabBarAllowFontScaling: true,  
     }}
     > 
-        <Tabs.Screen name='index'  options={{  
+        <Tabs.Screen name='dashboard/index'  options={{  
           tabBarIcon: ({color}) => <MaterialIcons name="dashboard" size={30} color={color} />
         }}  />
         

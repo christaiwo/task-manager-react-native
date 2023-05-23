@@ -15,7 +15,7 @@ export default function Page() {
   const checkAuthState = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        router.push('/user');
+        router.push('/user/dashboard');
       }
     });
   };
