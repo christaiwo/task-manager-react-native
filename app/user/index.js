@@ -1,11 +1,12 @@
-import { View, Text, SafeAreaView } from 'react-native'
+import { View, Text, SafeAreaView, TextInput } from 'react-native'
 import React from 'react'
 import { Stack } from 'expo-router'
-import { HeaderLeft, HeaderRight } from './Header'
+import { HeaderLeft, HeaderRight } from './Header';
+import { AntDesign } from '@expo/vector-icons';
+import Welcome from './Welcome';
+
 
 const index = () => {
-
-
   return (
     <>
       <Stack.Screen options={{  
@@ -15,10 +16,10 @@ const index = () => {
           headerTitle: '',
       }} />
 
-      <SafeAreaView className="bg-[#E5E5E5] h-full w-full px-2">
-        <View>
-          <Text className="text-xl font-bold">Hello Josh</Text>
-        </View>
+      <SafeAreaView className="bg-[#E5E5E5] h-full w-full">
+        <Welcome/>
+
+        
       </SafeAreaView>
     </>
   )
