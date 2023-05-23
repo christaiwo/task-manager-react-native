@@ -1,11 +1,20 @@
-import { View, Text } from 'react-native'
+import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
+import { Stack } from 'expo-router'
 
 const index = () => {
   return (
-    <View>
-      <Text>index</Text>
-    </View>
+    <>
+      <Stack.Screen options={{  
+        headerTitle:'Create Task',
+        headerShown:false
+      }}/>
+      <SafeAreaView>
+      <View>
+        <Text>index</Text>
+      </View>
+    </SafeAreaView>
+    </>
   )
 }
 
